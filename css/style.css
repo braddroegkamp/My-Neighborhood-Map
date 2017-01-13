@@ -1,0 +1,24 @@
+#search {
+	height: 25px;
+	width: 100%;
+}
+
+#sidebar {
+	position: absolute;
+	left: 0;
+	top: 25px;
+	bottom: 0;
+	width: 24%;
+}
+
+#map {
+	position: absolute;
+	left: 26%;
+  	height: 100%;
+  	width: 75%;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
