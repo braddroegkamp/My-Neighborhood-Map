@@ -1,11 +1,14 @@
+//the main Google Map view
 var mapView = {
 	myMap: null,
+
 
     init: function() {
         this.map = document.getElementById('map');
         this.render();
     },
 
+    //render map from Google Maps API
     render: function() {
         myMap = new Map();
 		myMap.googleMap = new google.maps.Map(this.map, {
@@ -14,25 +17,36 @@ var mapView = {
 		});
 	},
 
+	//this loops through all venues and adds Google Markers to the map
 	addMarker: function(fsVenue) {
 		var self = this;
+
+		//get marker coordinates from provided foursquare object
 		var markerCoords = {
 			lat : fsVenue.venue().venue.location.lat,
 			lng : fsVenue.venue().venue.location.lng
 		};
+
 		var markerTitle = fsVenue.venue().venue.name;
+
+		//generate new Google Maps Marker
 		fsVenue.marker = new google.maps.Marker({
 			position: markerCoords,
 			map: myMap.googleMap
 			});
+
+		//call selectMarker when marker clicked
 		fsVenue.marker.addListener('click', function() {
 			self.selectMarker(fsVenue);
 		});
+
+		//add marker to array to later reference
 		myMap.googleMarkers.push(fsVenue);
 	},
 
+	//when marker clicked, call this
 	selectMarker: function(fsVenue) {
-		//animate marker for 3 seconds
+		//animate marker for 2 seconds
 		fsVenue.marker.setAnimation(google.maps.Animation.BOUNCE);
 		setTimeout(function() {
 			fsVenue.marker.setAnimation(null);
@@ -57,10 +71,12 @@ var mapView = {
 		myMap.infoWindow.open(myMap, fsVenue.marker)
 	},
 
+	//hide marker from map
 	removeMarker: function(fsVenue) {
 		fsVenue.marker.setMap(null);
 	},
 
+	//show a previously hidden marker on map
 	showMarker: function(fsVenue) {
 		fsVenue.marker.setMap(myMap.googleMap);
 	}
