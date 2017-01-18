@@ -7,10 +7,11 @@ var ViewModel = function() {
 
 	this.placesList = ko.observableArray([]);
 	this.search = ko.observable();
+	this.error_message = ko.observable();
 
 	//error function if Foursquare API ajax call doesn't return a result
 	var fsRequestTimeout = setTimeout(function(){
-        $('#error-message').append('Failed to get FourSquare resources');
+		self.error_message('Failed to get FourSquare resources');
     }, 5000);
 
 	//Foursquare API call to get Green Bay restaurants and add to a ko.observableArray referenced in index.html
