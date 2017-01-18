@@ -73,11 +73,11 @@ var mapView = {
 
 	//hide marker from map
 	removeMarker: function(fsVenue) {
-		fsVenue.marker.setMap(null);
+		fsVenue.marker.setVisible(false);
 	},
 
 	//show a previously hidden marker on map
 	showMarker: function(fsVenue) {
-		fsVenue.marker.setMap(myMap.googleMap);
+		fsVenue.marker.setVisible(true);
 	}
 };
