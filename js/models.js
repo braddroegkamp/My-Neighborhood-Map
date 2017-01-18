@@ -6,14 +6,14 @@ var COORDINATES = {
 
 
 //foursquare api call details
-fs_client_id = 'MXGP44Q2K41ILWCF12CJ1U0WJCDGKEAQMFOBDRZ40SGKSIG1';
-fs_client_secret = 'RT2LEAYLOE2BSWZTLXLC0FF1BBDS2UBRSNFAPPRSR1AXIFD0';
-fs_category = 'food';
-fs_vsn = '20160110';
-fs_api_call = 'https://api.foursquare.com/v2/venues/explore?client_id=' +
-				fs_client_id + '&client_secret=' + fs_client_secret + 
+fsClientId = 'MXGP44Q2K41ILWCF12CJ1U0WJCDGKEAQMFOBDRZ40SGKSIG1';
+fsClientSecret = 'RT2LEAYLOE2BSWZTLXLC0FF1BBDS2UBRSNFAPPRSR1AXIFD0';
+fsCategory = 'food';
+fsVsn = '20160110';
+fsApiCall = 'https://api.foursquare.com/v2/venues/explore?client_id=' +
+				fsClientId + '&client_secret=' + fsClientSecret + 
 				'&ll=' + COORDINATES.lat + ',' + COORDINATES.lng + '&section=' + 
-				fs_category + '&v=' + fs_vsn + '&m=foursquare';
+				fsCategory + '&v=' + fsVsn + '&m=foursquare';
 
 
 //google map api details

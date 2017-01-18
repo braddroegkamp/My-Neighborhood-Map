@@ -16,7 +16,7 @@ var ViewModel = function() {
 
 	//Foursquare API call to get Green Bay restaurants and add to a ko.observableArray referenced in index.html
 	$.ajax({
-		url: fs_api_call,
+		url: fsApiCall,
 		dataType: 'jsonp',
 		success: function(obj) {
 	       	var rawPlacesList = obj.response.groups[0].items;
