@@ -1,5 +1,15 @@
 //initialize Google map
-mapView.init();
+var googleSuccess = function () {
+	mapView.init();
+	ko.applyBindings(new ViewModel());
+};
+
+
+//if loading map fails
+var googleError = function() {
+	document.getElementById('map').append('Failed to load Google Map');
+};
+
 
 //main ViewModel function used with Knockout
 var ViewModel = function() {
@@ -51,9 +61,6 @@ var ViewModel = function() {
 	});
 
 };
-
-ko.applyBindings(new ViewModel());
-
 
 
 //js to manage window responsiveness
