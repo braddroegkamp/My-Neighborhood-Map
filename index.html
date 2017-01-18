@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<input id="search" data-bind="textInput: search" placeholder="Search..." autocomplete="off">
-	<div id="error-message" data-bind="text: error_message"></div>
-	<button id="hamburger">&#9776;</button>
-	<button id="cross">&#735;</button>
-	<div id="sidebar">
-		<ul data-bind="foreach: placesList">
-        	<li id="sidebar-cat" data-bind="text: venue().venue.name, visible: show(), click: $parent.setMarker"></li>  
-    	</ul>
-	</div>
-    <div id="map">Google Maps Error.  Map did not load properly</div>
+    <header>
+    	<input id="search" data-bind="textInput: search" placeholder="Search..." autocomplete="off">
+    	<div id="error-message" data-bind="text: error_message"></div>
+    </header>
+    <aside>
+    	<button id="hamburger">&#9776;</button>
+    	<button id="cross">&#735;</button>
+    	<div id="sidebar">
+    		<ul data-bind="foreach: placesList">
+            	<li id="sidebar-cat" data-bind="text: venue().venue.name, visible: show(), click: $parent.setMarker"></li>  
+        	</ul>
+    	</div>
+    </aside>
+    <main>
+        <div id="map">Google Maps Error.  Map did not load properly</div>
+    </main>
     <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAMYWe2LBtpPVFvZU1-GkT6of3s5IBXbjQ"></script>
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/libs/knockout-3.2.0.js"></script>
